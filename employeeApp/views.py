@@ -7,15 +7,11 @@ from rest_framework.generics import CreateAPIView
 from rest_framework.generics import DestroyAPIView
 from rest_framework.generics import UpdateAPIView
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
-
-
 from employeeApp.serializers import EmployeeSerializer
 from employeeApp.models import Employee
 
-from django.http import HttpResponse, JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.parsers import JSONParser
 
+# views for testing purpose
 
 class TestClassView(RetrieveUpdateDestroyAPIView):
     queryset = Employee.objects.all()
@@ -26,9 +22,11 @@ class TestClassCreateView(ListCreateAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
 
+# views for devlopment purpose
+
 
 class ListEmployeeAPIView(ListAPIView):
-    queryset = Employee.objects.all()
+    queryset = Employee.objects.all().order_by('name')
     serializer_class = EmployeeSerializer
 
 
