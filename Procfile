@@ -1,4 +1,4 @@
-web: gunicorn employeeApp.wsgi
-release: python manage.py makemigrations 
-release: python manage.py collectstatic 
-release: python manage.py migrate 
+web: gunicorn employeeAPIProject.wsgi
+release: python manage.py makemigrations --employeeApp
+release: python manage.py collectstatic --noinput
+release: python manage.py migrate --employeeApp
