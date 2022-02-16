@@ -6,18 +6,17 @@ from django.utils.translation import gettext_lazy as _
 class Employee(models.Model):
 
     class genderType(models.TextChoices):
-        select = '', _('select...')
         male = 'male', _('Male')
         female = 'female', _('Female')
 
-    name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=100)
-    resume = models.FileField(upload_to='static/')
-    email = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, help_text="Name of Employee")
+    phone = models.CharField(max_length=100, help_text="Phone Number")
+    resume = models.FileField(upload_to='static/', help_text="Resume File")
+    email = models.CharField(max_length=100, help_text="Email Id")
     gender = models.CharField(
-        max_length=100, choices=genderType.choices, default=genderType.select)
-    linkedin = models.CharField(max_length=100)
-    github = models.CharField(max_length=100)
+        max_length=100, choices=genderType.choices, help_text="male or female")
+    linkedin = models.CharField(max_length=100, help_text="linked in url")
+    github = models.CharField(max_length=100, help_text="github url")
 
     def __str__(self):
         return (self.name + " || " + self.email + " || " + self.phone + " || " + self.gender + " || " + self.linkedin + " || " + self.github)
