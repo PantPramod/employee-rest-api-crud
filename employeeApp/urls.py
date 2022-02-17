@@ -4,7 +4,7 @@ from employeeApp import views
 
 urlpatterns = [
 
-    path("emp/<int:pk>/", views.EmpClassView.as_view(), name="test"),
-    path("emp/", views.TestClassCreateView.as_view(), name="test_create"),
+    path("emp/<int:pk>/", views.EmpClassView.as_view(), name="Employee id"),
+    path("emp/", views.EmpClassCreateView.as_view(), name="Employee Post"),
 
 ]

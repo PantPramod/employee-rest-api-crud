@@ -12,7 +12,7 @@ class Employee(models.Model):
     name = models.CharField(max_length=100, help_text="Name of Employee")
     phone = models.CharField(max_length=100, help_text="Phone Number")
     resume = models.FileField(upload_to='static/', help_text="Resume File")
-    email = models.CharField(max_length=100, help_text="Email Id")
+    email = models.EmailField(max_length=100, help_text="Email Id")
     gender = models.CharField(
         max_length=100, choices=genderType.choices, help_text="male or female")
     linkedin = models.CharField(max_length=100, help_text="linked in url")

@@ -12,6 +12,6 @@ class EmpClassView(RetrieveUpdateDestroyAPIView):
     serializer_class = EmployeeSerializer
 
 
-class TestClassCreateView(ListCreateAPIView):
+class EmpClassCreateView(ListCreateAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
