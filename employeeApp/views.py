@@ -8,7 +8,7 @@ from employeeApp.models import Employee
 
 
 class EmpClassView(RetrieveUpdateDestroyAPIView):
-    queryset = Employee.objects.all().order_by('id')
+    queryset = Employee.objects.all().order_by('name')
     serializer_class = EmployeeSerializer
 
 
