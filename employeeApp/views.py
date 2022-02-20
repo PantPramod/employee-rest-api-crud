@@ -13,5 +13,5 @@ class EmpClassView(RetrieveUpdateDestroyAPIView):
 
 
 class EmpClassCreateView(ListCreateAPIView):
-    queryset = Employee.objects.all().order_by('name')
+    queryset = Employee.objects.all().order_by('id')
     serializer_class = EmployeeSerializer
